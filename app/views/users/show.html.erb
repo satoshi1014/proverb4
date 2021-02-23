@@ -1,0 +1,50 @@
+<div class="new-main">
+  <div class="wide-content-article">
+    <div class="user-content">
+      <div class="user-page">
+        <h1 class="user-page-title">
+          自己紹介
+        </h1>
+        <% if current_user.id == @user.id %>
+          <p class="user-edit-space">
+            <%= link_to '編集',edit_user_path(current_user), class: "user-edit-btn" %>
+          </p>
+        <% end %>
+        <div class="user-image-space">
+          <div class="user-items">
+            <% unless @user.image.attached? %>
+              <p class="force">
+                ※ 画像が設定されていません
+              </p>
+            <% else %>
+              <%= image_tag @user.image, class: "user-image" %>
+            <% end %>
+          </div>
+          <ul class="user-information">
+            <li class="name user-core"><span class="topic">ユーザーネーム：</span><%= @user.username %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="main-content">
+     <div class="new-wide-content">
+        <div class="loop">
+          <% unless @user.words.present? %>
+            <p class="spot-nil">
+              ※　まだ投稿がありません
+            </p>
+          <% else %>
+            <div class="saying-list">
+              <ul class="clearfix">
+                <%= render partial: "words/proverb", collection: @proverbs %>
+              </ul>
+            </div>
+          <% end %> 
+        </div>
+      <%= paginate @proverbs %>
+     </div>
+  </div>
+</div> 

@@ -1,0 +1,20 @@
+<div class="main">
+  <div class="main-content">
+      <div class="wide-content">
+        <div class="loop">
+          <div class="saying-list">
+            <ul class="clearfix">
+              <% if @proverbs.present? %>
+                <%= render partial: "proverb", collection: @proverbs %>
+              <% else %>
+                <li class="spot-nil">
+                  ※　まだ投稿がありません
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <%= paginate @proverbs %>
+     </div>
+  </div>
+</div>

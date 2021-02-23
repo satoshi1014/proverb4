@@ -1,0 +1,36 @@
+<div class="new-main">
+  <div class="wide-content-article">
+    <article class="article">
+      <div class="wpcf7">
+        <div class="error-form">
+          <%= form_for(@user) do |f| %>
+            <% if @user.errors.any? %>
+              <h3 class="error">
+                入力した内容にエラーが<%= @user.errors.count %>件あります
+              </h3>
+              <ul class="error-point">
+                <% @user.errors.full_messages.each do |message| %>
+                  <li class="error-point-item">
+                    <p class="message">
+                      <%= message %>
+                    </p>
+                  </li>
+                <% end %>
+              </ul>
+            <% end %>
+          <div class="name-space">
+            <%= f.label :username, "ユーザーネーム", {class: 'name-logo'} %>
+            <%= f.text_field :username, class: "name-area" %>
+          </div>
+          <div class="image-area">
+            <%= f.label :image, "ユーザー写真", {class: 'image-logo'} %>
+            <%= f.file_field :image, class: "image" %>
+          </div> 
+          <div class="send">
+            <%= f.submit  "編集", class: "send-buttom" %>
+          </div>
+        <% end %>
+      </div>
+    </article>
+  </div>
+</div>

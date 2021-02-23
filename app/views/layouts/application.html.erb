@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Proverb4</title>
+    <title>ワンピース名言集</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,32 @@
   </head>
 
   <body>
+  <% if user_signed_in? %>
+    <% unless %w[new_user_session new_user_registration].any? { |name| current_page?(send("#{name}_path")) } %> 
+      <header class="header">
+        <div class="nav_area">
+          <p class="header-title">
+            <%= link_to 'ワンピース名言集', root_path, class: "opa" %>
+          </p>
+          <ul class="h_nav">
+            <li class="logo">
+              <a href="/words/new" class="header-new-btn btn">
+                名言投稿
+              </a>
+            </li>
+            <li class="logo">
+              <a href="/users/<%= current_user.id %>" class="header-mypage-btn btn">
+                マイページ
+              </a>
+            </li>
+            <li class="logo">
+              <%= link_to 'サインアウト', destroy_user_session_path, class: "header-sign-out-btn btn", method: :delete %>
+            </li>
+          </ul>
+        </div>
+      </header>
+    <% end %>
+  <% end %>
     <%= yield %>
   </body>
 </html>

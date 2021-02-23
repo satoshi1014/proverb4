@@ -1,0 +1,86 @@
+<div class="new-main">
+  <div class="new-content">
+    <h2 class="show-owner">
+      <%= @proverb.owner %><span class="show-owner-span">の名言</span>
+    </h2>
+    <div class="btn-throw-area">
+    <% if current_user.id == @proverb.user.id %>
+      <div class="btn-area">
+        <ul class="btn-space">
+          <li class="btn-space-edit show-btn">
+            <%= link_to '編集', "/words/#{@proverb.id}/edit", class: "show-edit-btn" %>
+          </li>
+          <li class="btn-space-delete show-btn">
+            <%= link_to '削除', "/words/#{@proverb.id}", method: :delete, class: "show-delete-btn" %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+    <h2 class="throw-spot">
+      <a href="/users/<%= @proverb.user.id %>" class="thorw-spot-btn">
+        <%= @proverb.user.username %>
+      </a>
+      <span>
+        さんの投稿
+      </span>
+    </h2>
+  </div>
+</div>
+<div class="show-comment">
+  <div class="show">
+    <div class="show-space">
+      <h2 class="word-title">
+        名言
+      </h2>
+      <h2 class="show-area">
+        <%= safe_join(@proverb.proverb.split("\n"),tag(:br)) %>
+      </h2>
+      <h2 class="show-owner-area">
+         <%= @proverb.owner %>
+      </h2>
+      <p class="show-story">
+        <%= safe_join(@proverb.story.split("\n"),tag(:br)) %>
+      </p>
+    </div>
+  </div>
+  <div class="comment-area">
+    <div class="comment-form">
+      <%= form_with(model:[@proverb, @comment], method: :post, class: "comment-main-form") do |f| %>
+        <%= f.text_area :comment_content, class: "comment-form-area" %>
+        <%= f.hidden_field :word_id, value: @proverb.id %>
+        <%= f.submit 'コメントする', class: "comment-form-btn" %>
+      <% end %>
+    </div>
+    <div class="comment-display">
+      <h2 class="comment-title">
+        コメント一覧
+      </h2>
+      <% unless @comments.present? %>
+        <p class="comment-nil">
+          ※　まだコメントはありません
+        <p>
+      <% else %>
+        <div class="comment-items">
+          <% @comments.each do |comment| %>
+            <div class="comment-occupy">
+              <p class="comment-core">
+              <% if comment.user.image.attached? %>
+                <%= image_tag comment.user.image, class: "comment-user-image" %>
+              <% end %>
+              <span class="comment-user">
+                <%= comment.user.username %>:
+              </span> 
+              </p>
+              <p class="comment-core-content">    
+                <span class="comment-content">
+                  <%=  comment.comment_content %>
+                </span>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  </div>
+</div>

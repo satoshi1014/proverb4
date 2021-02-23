@@ -1,0 +1,44 @@
+<div class="signup">
+  <div class="signup-area">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "signup-form") do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :email, class: "email" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "email-field", placeholder: "Email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, class: "password" %>
+        <% if @minimum_password_length %>
+        <em class="password-min">(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password",class: "password-field", placeholder: "Password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, class: "password-conformation" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "password-confirmation-field", placeholder: "Password confirmation" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :username, class: "sign-up-username" %><br />
+        <%= f.text_field :username, class: "sign-up-username-field", placeholder: "Username" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :image, "user写真", class: "sign-up-userfot" %><br />
+        <%= f.file_field :image, class: "sign-up-userfot-field" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: "sign-up-btn" %>
+      </div>
+    <% end %>
+      <div class="move">
+        <%= link_to 'Log in',new_user_session_path, class: "move-btn" %>
+      </div>
+
+    <%# <%= render "devise/shared/links" %> 
+  </div>
+</div>

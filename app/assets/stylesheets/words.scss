@@ -1,0 +1,260 @@
+// Place all the styles related to the words controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+header.header {
+    background-color: #151515;
+    // position: fixed;
+    width: 1504px;
+}
+.nav_area {
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+}
+p.header-title {
+    line-height: 85px;
+}
+a.opa {
+    font-size: 60px;
+    font-weight: bold;
+    color: #b92d2d;
+}
+ul.h_nav {
+    display: flex;
+}
+.btn {
+    color: black;
+    background-color: white;
+    padding: 10px 18px;
+    display: block;
+    font-size: 12px;
+    border-radius: 2px;
+    margin-top: 25px;
+    margin-right: 13px;
+}
+.main {
+    /* margin-top: 80px; */
+    /* padding-top: 100px; */
+    background-color: #060f1024;
+}
+.main-content {
+    // padding-top: 100px;
+}
+.error-form {
+    background-color: #0b2a2d42;
+}
+.place-space {
+    display: flex;
+    flex-direction: column;
+}
+.address-space {
+    flex-direction: column;
+    display: flex;
+    margin-top: 30px;
+}
+.address {
+    border: 0.5px solid black;
+    font-size: 30px;
+    box-shadow: #00000042 0 0 2px 1px;
+    width: 800px;
+}
+label.address-logo {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.wpcf7 {
+    padding-top: 200px;
+}
+.error-form {
+    /* background-color: #0b2a2d42; */
+    margin: 0 300px;
+    border: 1.8px solid #ef782354;
+    border-radius: 5px;
+    background-color: white;
+    padding: 15px 15px 50px 15px;
+}
+.place-space {
+    display: flex;
+    flex-direction: column;
+}
+label.place-logo {
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+.place {
+    border: 0.5px solid black;
+    font-size: 50px;
+    box-shadow: #00000042 0 0 2px 1px;
+    width: 800px;
+}
+.send {
+    float: right;
+    /* display: block; */
+    margin-top: 10px;
+}
+input.send-buttom {
+    padding: 2px 30px;
+}
+li.clearfix-items {
+    /* background-color: black; */
+    background-image: url("/sample.jpg");
+    background-size: cover;
+    height: 800px;
+}
+.saying-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+ul.clearfix {
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 33.333%; */
+    margin: 0;
+    padding: 0;
+    /* list-style: none; */
+    width: 100%;
+}
+li.clearfix-items {
+    /* background-color: black; */
+    background-image: url(/sample2.jpg);
+    background-size: cover;
+    height: 400px;
+    vertical-align: top;
+    display: flex;
+    flex-wrap: wrap;
+    width: 33%;
+    margin: 2px 2px 2px;
+    justify-content: center;
+    align-items: center;
+}
+a.clearfix-items-btn {
+    /* width: 100%; */
+    /* margin: 0 0 auto; */
+    color: white;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+.loop-article {
+    padding: 0 70px;
+}
+h2.area {
+    margin-bottom: 30px;
+}
+.new-main {
+    // padding-top: 100px;
+}
+.story-space {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+label.story-logo {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.story {
+    border: 0.5px solid black;
+    font-size: 30px;
+    box-shadow: #00000042 0 0 2px 1px;
+    width: 800px;
+}
+.new-content {
+    display: flex;
+    border-bottom: 1px solid #bdb8b866;
+    margin: 100px 100px 50px 100px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+}
+h2.show-owner {
+    font-size: 22px;
+    font-weight: 500;
+    padding-left: 20px;
+}
+.btn-area {
+    // margin-left: 600px;
+}
+ul.btn-space {
+    display: flex;
+}
+a.show-edit-btn {
+    color: black;
+    background-color: white;
+    padding: 8px 19px;
+    display: block;
+    font-size: 12px;
+    border-radius: 2px;
+    /* margin-top: 25px; */
+    margin-right: 13px;
+}
+a.show-delete-btn {
+    color: black;
+    background-color: white;
+    padding: 8px 19px;
+    display: block;
+    font-size: 12px;
+    border-radius: 2px;
+    /* margin-top: 25px; */
+    margin-right: 13px;
+}
+h2.throw-spot {
+    font-weight: 400;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+.show {
+    background-image: url(/sample4.jpg);
+    background-size: cover;
+    height: 800px;
+    object-fit: contain;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.show-space {
+    
+}
+h2.word-title {
+    color: #ffffff80;
+    box-shadow: black 0px 0px 2px;
+    text-align: center;
+    font-size: 30px;
+    font-family: serif;
+    margin: 0px 20px 10px 20px;
+}
+h2.show-area {
+    color: #ffffff;
+    font-family: serif;
+    font-size: 30px;
+    margin: 40px 100px;
+}
+h2.show-owner-area {
+    color: white;
+    text-align: end;
+    margin: 0 100px 20px 0;
+}
+p.show-story {
+    color: #ffffffa8;
+    border-top: 1px solid #ffffff5e;
+    margin: 0px 100px;
+    padding-top: 30px;
+}
+.show-comment {
+    display: flex;
+    margin: 0 100px 100px;
+}
+.btn-throw-area {
+    display: flex;
+}
+p.spot-nil {
+    text-align: center;
+}
+h3.error {
+    color: red;
+    text-align: center;
+}
+ul.error-point {
+    text-align: center;
+}
