@@ -69,18 +69,17 @@ img.user-image {
     object-fit: cover;
 }
 .signup {
-    width: 1504px;
-    height: 860px;
     background-image: url(/signup.jpg);
     background-size: cover;
     object-fit: cover;
+    width: 100%;
+    min-height: 100vh;
+    background-position: top center;
 }
 .signup-area {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1504px;
-    height: 840px;
     font-weight: 100;
     overflow: hidden;
     min-height: 10rem;
@@ -88,6 +87,7 @@ img.user-image {
   max-width: 50%;
   padding: .5rem;
   flex-direction: column;
+  min-height: 100vh;
 }
 .email-field,.password-field,.password-confirmation-field,.sign-up-username-field,.sign-up-userfot-field{
   ::-webkit-input-placeholder {
